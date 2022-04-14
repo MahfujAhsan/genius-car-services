@@ -8,7 +8,7 @@ import logo from "../../../images/logo.png"
 
 const Header = () => {
     const [user] = useAuthState(auth);
-
+    
     const handleSignout = () => {
         signOut(auth);
     };
@@ -36,9 +36,9 @@ const Header = () => {
                             <Nav.Link as={Link} to="about">About</Nav.Link>
                             {
                                 user ?
-                                    <button onClick={handleSignout}>SignOut</button>
+                                    <Link className='text-white text-decoration-none d-flex align-items-center' to="login" onClick={handleSignout}>SignOut</Link>
                                     :
-                                    <Nav.Link as={Link} to="login">
+                                    <Nav.Link className='text-white' as={Link} to="login">
                                         Log In
                                     </Nav.Link>}
                         </Nav>
