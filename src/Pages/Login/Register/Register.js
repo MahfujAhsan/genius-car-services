@@ -9,6 +9,9 @@ const Register = () => {
     };
     const handleRegister = e => {
         e.prevent.default();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;     
     }
     return (
         <div className='register-form'>
