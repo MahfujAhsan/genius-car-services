@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const ServiceDetail = () => {
     const { serviceId } = useParams();
+    const [service, setService] = useState([]);
+    useEffect(() => {
+        
+    }, [])
     return (
         <div>
             <h2>Welcome To Detail {serviceId}</h2>
