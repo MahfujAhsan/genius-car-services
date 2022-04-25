@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import useServiceDetail from '../../hooks/useServiceDetail';
 
 const ServiceDetail = () => {
     const { serviceId } = useParams();
-    const [service, setService] = useState({});
-    useEffect(() => {
-        const url = `http://localhost:5000/service/${serviceId}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setService(data))
-    }, [])
+    const [service] = useServiceDetail(serviceId)
     return (
         <div>
             <h2>Welcome To Detail: {service.name}</h2>
